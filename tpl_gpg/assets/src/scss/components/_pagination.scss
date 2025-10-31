@@ -1,0 +1,63 @@
+/*pagination*/
+.pagination-wrapper{
+    text-align:center;
+    margin:15px 0;
+    width:100%;
+
+    .content__catalogue & {
+        margin: 10px 0 50px;
+
+        @include media-breakpoint-up(md) {
+            margin: 20px 0 50px;
+        }
+    }
+
+    .pagination{
+        width:100%;
+        justify-content:center;
+    }
+
+    .page-numbers {
+        @include font-style($Open-sans,16px,12px,$semi-bold);
+        color: $grey-text;
+        display: inline-block;
+        margin: 0 11px;
+
+        .search-results & {
+            font-size: 17px;
+            line-height: 17px;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+
+    .page-numbers {
+        &.current {
+            padding:5px;
+            color:$white;
+            background: $grey-text;
+            border-radius:3px;
+
+            .search-results & {
+                padding: 3px 6px 3px;
+            }
+
+            &:hover {
+                .search-results & {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .page-template-tpl-page-granit & {
+        margin: 15px 0 50px;
+
+        @include media-breakpoint-up(lg) {
+            margin: 15px 0 80px;
+        }
+    }
+}  
+

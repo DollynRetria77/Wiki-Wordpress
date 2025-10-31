@@ -1,0 +1,29 @@
+#cookie-notice {
+    .cookie-notice-container {
+        .cn-buttons-container {
+            a {
+                @include font-style($Raleway,14px,14px,$regular);
+                margin: 0 5px;
+            }
+        }
+    }
+
+    .cn-text-container {
+        @include font-style($Raleway,14px,18px,$regular);
+        margin: 0 0 10px;
+        color: $white;
+
+        @include media-breakpoint-up(medium-screen) {
+            padding: 0 30px;
+        }
+
+        a {
+            @include font-style($Raleway,14px,18px,$regular);
+            color: $white;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+}

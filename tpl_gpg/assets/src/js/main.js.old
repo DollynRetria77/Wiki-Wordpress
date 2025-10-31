@@ -1,0 +1,493 @@
+jQuery.noConflict();
+
+(function ($) {
+
+    "use strict";
+
+    var $window = $( window );
+    var windowsize = $window.width();
+    function checkWidth() {
+        windowsize = $window.width();
+    }
+
+	// var lastScrollTop = 0;
+	// var menu_stiky_up = false;
+	// $(window).scroll(function() {
+	// 	var st = $(this).scrollTop();
+	// 	lastScrollTop = st;
+
+	// 	if (st > 100) {
+	// 		$(".header").addClass("sticky");
+	// 		menu_stiky_up = true;
+	// 	} else if (st < 100) {
+	// 		$(".header").removeClass("sticky");
+	// 		$(".header").addClass("hidden-sticky");
+	// 		if (menu_stiky_up) {
+	// 			$(".hidden-sticky").addClass("up");
+	// 			setTimeout(function() {
+	// 			$(".hidden-sticky").removeClass("up");
+	// 			menu_stiky_up = false;
+	// 			}, 500);
+	// 		}
+	// 	}
+    // });
+    
+    function ImageReturne(){
+        var $imgSrc = $('#panzoom-element').children("img").attr('src');
+        var $imgAlt = $('#panzoom-element').children("img").attr('alt');
+        var firstFunc = function step1() { setTimeout('step2()', 10); }
+        var secondFunc = function step2() { window.print(); window.close() }
+        var getImages = "<html><head><script>\n" + firstFunc + "\n" + secondFunc + "</script></head><body onload='step1()'>\n" + "<div style='display:block; margin:auto; position:relative; width:100%; height:100%; max-height:100%; max-width:100%'><img src="+ $imgSrc +" alt="+ $imgAlt +" style='width:auto; height:auto; max-height:100%; max-width:100%' /></div></body></html>";
+        return getImages;
+    }
+
+$(document).ready(function() {
+                    
+        //monument
+        $('.zoom__print').on('click', function(){
+            var pwa = window.open("about:blank", "_new");
+            pwa.document.open();
+            pwa.document.write(ImageReturne());
+            pwa.document.close();
+        })
+        //monument
+
+        //nuancier == nuancier == nuancier
+        //filtre par provenances : selectProvenance
+        $('#selectProvenance').on('change', function(){
+            var $filter = $(this).find('option:selected').val();
+            $.ajax({
+                url: ajaxurl, 
+                type: "GET",
+                data: {
+                    'action': 'load_nuancier_perprovenance',
+                    'provenance': $filter
+                }
+            }).done(function(response){
+                console.log(response);
+                $('#lesNuances').empty();
+                $('#lesNuances').html(response);
+            });
+        });
+
+        //filtre par color
+        $('#filterColor').on('change', function(){
+            var $filter = $(this).find('option:selected').val();
+
+            $.ajax({
+                url: ajaxurl, 
+                type: "GET",
+                data: {
+                    'action': 'load_nuancier_percolor',
+                    'color': $filter
+                }
+            }).done(function(response){
+                console.log(response);
+                $('#lesNuances').empty();
+                $('#lesNuances').html(response);
+            });
+        });
+
+        // filtre par nom
+        $('#filterName').on('keypress', function(e){
+            if(e.keyCode == 13){
+                e.preventDefault();
+                var textsearch = $(this).val();
+
+                $.ajax({
+                    url: ajaxurl, 
+                    type: "GET",
+                    data: {
+                        'action': 'load_nuancier_pername',
+                        'textsearch': textsearch
+                    }
+                }).done(function(response){
+                    console.log(response);
+
+                    $('#lesNuances').empty();
+                    $('#lesNuances').html(response);
+                });
+            }
+        });
+
+        $('#button_search_pername').on('click', function(e){
+            e.preventDefault();
+            var _event = $.Event('keypress');
+            _event.which = 13;
+            _event.keyCode = 13;
+            $('#filterName').trigger(_event);
+        });
+        //nuancier == nuancier == nuancier
+
+        //jquery ready
+        $(".menu-burger").click(function(){
+            $("body").toggleClass("open-menu");
+        });
+
+        $(".catalogue-filters__text").click(function(){
+            $("body").addClass("open-filter");
+        });
+
+        $(".filter-close").click(function() {
+            $("body").removeClass("open-filter");
+        });
+
+        $('#select_cat_list_desktop').selectpicker();
+
+        $('#filter-per-categorie').on('click', function(){
+            $('.select_cat_list_mobile').toggleClass('shows');
+            $('body').toggleClass('pos-fixed');
+        });
+
+        $('#close-filter').on('click', function(e){
+            e.preventDefault();
+            $('#filter-per-categorie').trigger('click');
+        });
+
+        $('#select_cat_list li a').on('click', function(){
+            $('#filter-per-categorie').trigger('click');
+        });
+    
+        //hp slider 
+        $('.hp-slider').not('.slick-initialized').slick({
+            autoplay: true,
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+ 
+        //hp monument slider 
+        $('.monument__slider').not('.slick-initialized').slick({
+            autoplay: true,
+            dots: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 1,
+                    }
+                },
+
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                }
+              ]
+        });
+
+        $('.monument__slider_page').not('.slick-initialized').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 1,
+                    }
+                },
+
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                }
+              ]
+        });
+
+        
+
+        //slider Qui sommes-nous
+        $('.qsn-slider-wrapper').not('.slick-initialized').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+        //--slider Qui sommes-nous
+
+        $('.faq-item .faq-item-question').on('click', function(){
+            $(this).toggleClass('active');
+            $(this).siblings('.faq-item-reponse').toggle();
+        });
+
+        $('.clickboard').on({
+            "click": function() {
+
+             var clipboardText = "";
+             clipboardText = $( '#boutonclick' ).val(); 
+             copyToClipboard( clipboardText );
+             $(this).tooltip({ items: ".clickboard", content: "<span style='color:#324854' >copié !</span>"});
+             $(this).tooltip("open");
+
+            },
+
+            "mouseout": function() {      
+            $(this).tooltip("disable");   
+             }
+        });
+
+            function copyToClipboard(text) {
+
+               var textArea = document.createElement( "textarea" );
+               textArea.value = text;
+               document.body.appendChild( textArea );       
+               textArea.select();
+
+               try {
+                  var successful = document.execCommand( 'copy' );
+                  var msg = successful ? 'successful' : 'unsuccessful';
+                  console.log('Copying text command was ' + msg);
+               } catch (err) {
+                  console.log('Oops, unable to copy',err);
+               }    
+               document.body.removeChild( textArea );
+            }
+
+        $('.select_cat_list').on('change', function() {
+            $('.cat_search').val(this.value);
+            var categorie_single = $(this).val();
+            if(categorie_single) {
+            $.ajax({
+
+                url: ajaxurl,
+                type: 'post',
+            
+                data: {
+                    categorie_single: categorie_single,
+                    action: 'filter_blog_gpg'
+
+                },
+                error: function (response) {
+                    console.log('erreur');
+                },
+                success: function (response) {
+
+                    window.location.replace(response);
+
+                }
+
+            });
+
+           }
+
+        });
+
+        var carselect = '0';
+        $('#select_cat_list li').on('click',function() {
+               carselect = $(this).attr('value');
+        
+            if(carselect) {
+            $.ajax({
+
+                url: ajaxurl,
+                type: 'post',
+                data: {
+                    categorie_single: carselect,
+                    action: 'filter_blog_gpg'
+
+                },
+                error: function (response) {
+                    console.log('erreur');
+                },
+                success: function (response) {
+                     window.location.replace(response);
+                }
+
+            });
+
+           }  
+
+        });
+
+
+
+    if ($("body.category")[0]){
+
+            var current_page_id = get_current_page_id();
+            var result = current_page_id.slice(9);
+            var capitalize_w = capitalize(result);
+
+            function capitalize(str) {
+              var strVal = '';
+              str = str.split(' ');
+              for (var chr = 0; chr < str.length; chr++) {
+                strVal += str[chr].substring(0, 1).toUpperCase() + str[chr].substring(1, str[chr].length) + ' '
+              }
+              return strVal
+            }
+
+           $('.filter-option-inner-inner').html(capitalize_w);
+
+    }
+
+
+    function get_current_page_id() {
+        var page_body = $('body.category');
+        var page_id = '';
+        if(page_body) {
+            var classList = page_body.attr('class').split(/\s+/);
+
+            $.each(classList, function(index, item) {
+                if (item.indexOf('category-') >= 0) {
+                    page_id = item;
+                    return false;
+                }
+            });
+        }
+         return page_id;
+    }
+
+
+
+    $('.clic_cat').on('change', function(){
+
+            var style_select = $('#style_select').val();
+            var cat_style    = $('option:selected', '#style_select').attr('slug-cat');
+
+            var select_couleur = $('#select_couleur').val();
+            var cat_couleur    = $('option:selected', '#select_couleur').attr('slug-cat');
+
+            var select_religion = $('#select_religion').val();
+            var cat_religion    = $('option:selected', '#select_religion').attr('slug-cat');
+
+            var select_type = $('#select_type').val();
+            var cat_type    = $('option:selected', '#select_type').attr('slug-cat');
+
+            var select_granit = $('#select_granit').val();
+            var cat_granit    = $('option:selected', '#select_granit').attr('slug-cat');
+
+            var select_prix = $('#select_prix').val();
+            var cat_prix    = $('option:selected', '#select_prix').attr('slug-cat');
+
+
+                $.ajax({
+
+                    url: ajaxurl,
+                    type: 'post',
+                    data: {
+                        style_select    : style_select,
+                        cat_style       : cat_style,
+                        select_couleur  : select_couleur,
+                        cat_couleur     : cat_couleur,
+                        select_religion :select_religion,
+                        cat_religion    :cat_religion,
+                        select_type     : select_type,
+                        cat_type        : cat_type,
+                        select_granit   :select_granit,
+                        cat_granit      :cat_granit,
+                        select_prix     :select_prix,
+                        cat_prix        :cat_prix,
+
+                        action: 'filter_catalogue_gpg'
+
+                    },
+                    error: function (response) {
+                        console.log('erreur');
+                    },
+                    success: function (response) {
+                        $('.ajax_content').html(response);
+
+                    }
+
+                });
+
+    });
+
+       
+
+
+});
+
+    $(window).on('load resize orientationchange', function(){
+        if ($(window).width() < 1025) {
+            $('.nos-actualites_hp_wrap').not('.slick-initialized').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 480,
+                        settings: {
+                        slidesToShow: 1
+                        }
+                    }
+                    ]
+            });
+        }
+    });
+
+    $(window).on('load resize orientationchange', function(){
+        if ($(window).width() < 1025) {
+            $('.project-content').not('.slick-initialized').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 480,
+                        settings: {
+                        slidesToShow: 1
+                        }
+                    }
+                    ]
+            });
+        }
+    });
+
+    $(window).on('load resize orientationchange', function(){
+        if ($(window).width() < 1025) {
+            $('.monument__similaires__wrap').not('.slick-initialized').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 480,
+                        settings: {
+                        slidesToShow: 1
+                        }
+                    }
+                    ]
+            });
+        }
+    });
+
+})(jQuery);
+
+const elem = document.getElementById('panzoom-element')
+const panzoom = Panzoom(elem, {
+  maxScale: 5,
+  animate: true
+})
+// panzoom.pan(10, 10)
+//panzoom.zoom(2, { animate: true })
+
+// Panning and pinch zooming are bound automatically (unless disablePan is true).
+// There are several available methods for zooming
+// that can be bound on button clicks or mousewheel.
+document.getElementById('zoom-in').addEventListener('click', panzoom.zoomIn)
+document.getElementById('zoom-out').addEventListener('click', panzoom.zoomOut)
+elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
+

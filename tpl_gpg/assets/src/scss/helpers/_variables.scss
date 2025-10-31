@@ -1,0 +1,89 @@
+$colors: (
+  white: #ffffff,
+  black: #000000,
+  red: #ff0000,
+  blue: #657481,
+  pale-blue: #8695a4,
+  orange : #ff9d1c,
+  beige: #f2ebe4,
+  grey: #D1D1D1,
+  grey1:#6B7782,
+  grey2:#D1D3D4,
+  grey3:#E9EAEA,
+  grey-slider: #EAEEF2,
+  grey-text: #324854,
+  grey-link: #707070,
+  grey-btn: #6A7782,
+  blue-border: #334853,
+  blue-title: #283A4A,
+  border-slider: #efefef,
+  border-article: #F4F4F4,
+  border-image: #D9D9D9,
+  bg-filter: #646464,
+  orange-hover: #EA8300,
+  light-grey: #fbfbfb,
+  gris: #E1E1E1,
+  vert: #8BB191,
+  bleu: #78B6D2,
+  violet: #8F89BD,
+  rose:#DD97B1
+);
+
+$size: ( 
+  input-btn-radius: 35px,
+  textarea-btn-radius: 10px
+);
+
+$font-weight: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800
+);
+
+$Raleway : 'Raleway', sans-serif;
+$Open-sans : 'Open Sans', sans-serif;
+ 
+$input-btn-radius: map-get($size, input-btn-radius);
+$textarea-btn-radius: map-get($size, textarea-btn-radius);
+
+$white: map-get($colors, white);
+$black: map-get($colors, black);
+$red: map-get($colors, red);
+$blue: map-get($colors, blue);
+$pale-blue: map-get($colors, pale-blue);
+$orange: map-get($colors, orange);
+$beige: map-get($colors, beige);
+$grey-text: map-get($colors, grey-text);
+$grey: map-get($colors, grey);
+$grey1: map-get($colors, grey1);
+$grey2: map-get($colors, grey2);
+$grey3: map-get($colors, grey3);
+$grey-slider: map-get($colors, grey-slider);
+$grey-link: map-get($colors, grey-link);
+$grey-btn: map-get($colors, grey-btn);
+$blue-border: map-get($colors, blue-border);
+$blue-title: map-get($colors, blue-title);
+$border-slider: map-get($colors, border-slider);
+$border-article: map-get($colors, border-article);
+$border-image: map-get($colors, border-image);
+$bg-filter: map-get($colors, bg-filter);
+$orange-hover: map-get($colors, orange-hover);
+$light-grey: map-get($colors, light-grey);
+$gris: map-get($colors, gris);
+$vert: map-get($colors, vert);
+$bleu: map-get($colors, bleu);
+$violet: map-get($colors, violet);
+$rose: map-get($colors, rose);
+
+$thin: map-get($font-weight, thin);
+$extra-light: map-get($font-weight, extra-light);
+$regular: map-get($font-weight, regular);
+$medium: map-get($font-weight, medium);
+$semi-bold: map-get($font-weight, semi-bold);
+$bold: map-get($font-weight, bold);
+$extra-bold: map-get($font-weight, extra-bold);

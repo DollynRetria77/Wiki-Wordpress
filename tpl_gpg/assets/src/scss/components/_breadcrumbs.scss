@@ -1,0 +1,89 @@
+.breadcrumbs-wrapper{
+    @include media-breakpoint-up(lg){
+        margin-bottom:25px;
+        padding-top:12px;
+    }
+    display:block; 
+    position: relative;
+
+    .fbc-page{
+        .fbc-wrap{
+            .fbc-items{
+                background-color:transparent;
+                
+
+                @include media-breakpoint-down(sm){
+                    padding:0;
+                }
+
+                li{
+                    @include media-breakpoint-up(md){
+                        font-size:16px;
+                    }
+                    @include font-style($Raleway,14px,normal,$regular);
+
+                    &:first-child{
+                        padding-left:0;
+                    }
+                    color:$white;
+
+                    .page-no-baniere &{
+                        color:$blue-title;
+                    }
+
+                    // .page-template-tpl-page-granit & {
+                    //     color: $grey-btn;
+                    // }
+
+                    a, .fbc-end-text{
+                        color:$white;
+                        @include media-breakpoint-up(md){
+                            font-size:16px;
+                        }
+                        font-size:14px;
+
+                        .page-no-baniere &{
+                            color:$blue-title;
+                        }
+
+                        // .page-template-tpl-page-granit & {
+                        //     color: $grey-btn;
+                        // }
+                    }
+
+                    .fbc-separator{
+                        @include media-breakpoint-up(md){
+                            margin-left: 8px;
+                            margin-right: 8px;
+                        }
+                        color: $white;
+                        margin-left: 4px;
+                        margin-right: 4px;
+
+                        .page-no-baniere &{
+                            color:$blue-title;
+                        }
+
+                        // .page-template-tpl-page-granit & {
+                        //     color: $grey-btn;
+                        // }
+                    }
+
+                    &.active{
+                        span{
+                            color:$white;
+
+                            .page-no-baniere &{
+                                color:$blue-title;
+                            }
+
+                            // .page-template-tpl-page-granit & {
+                            //     color: $grey-btn;
+                            // }
+                        }
+                    }
+                }
+            }
+        } 
+    } 
+}

@@ -1,0 +1,61 @@
+#cookie-notice {
+    .cookie-notice-container {
+        .cn-text-container {
+            @include font-style($Raleway,14px,18px,$regular);
+
+            span{
+                font-weight:$bold;
+            }
+        }
+    
+        .cn-buttons-container {
+            a {
+                @include font-style($Raleway,13px,13px,$regular); 
+            }
+        }
+    }
+}
+
+#cookie-law-info-bar {
+    .cli-bar-message {
+        @include font-style($Raleway,14px,20px,$regular);
+    }
+
+    .cli-bar-btn_container {
+        a {
+            @include font-style($Raleway,13px,13px,$regular); 
+        }
+    }
+}
+
+.cli-modal {
+    .cli-privacy-overview {
+        h4 {
+            @include font-style($Raleway,16px,20px,$regular);
+        }
+
+        a {
+            @include font-style($Raleway,14px,14px,$regular);
+        }
+    }
+
+    .cli-privacy-content {
+        .cli-privacy-content-text {
+            @include font-style($Raleway,14px,20px,$regular);
+        }
+    }
+
+    .cli-tab-header {
+        a {
+            @include font-style($Raleway,14px,14px,$regular);
+        }
+    }
+
+    .cli-necessary-caption {
+        @include font-style($Raleway,13px,13px,$regular);
+    }
+
+    .wt-cli-cookie-description {
+        @include font-style($Raleway,14px,20px,$regular);
+    }
+}

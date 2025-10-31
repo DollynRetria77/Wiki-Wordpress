@@ -1,0 +1,31 @@
+@mixin placeholder($font-family,$color, $font-size-p, $line-height-p, $font-weight-p, $opacity: 1) {
+    &::-moz-placeholder {
+      font-family:$font-family;
+      color: $color;
+      opacity: $opacity;
+      font-size: $font-size-p;
+      font-weight: $font-weight-p;
+      line-height: $line-height-p;
+      text-transform: none;
+    }
+  
+    &:-ms-input-placeholder {
+      font-family:$font-family;
+      color: $color;
+      opacity: $opacity;
+      font-size: $font-size-p;
+      font-weight: $font-weight-p;
+      line-height: $line-height-p;
+      text-transform: none;
+    }
+  
+    &::-webkit-input-placeholder {
+      font-family:$font-family;
+      color: $color;
+      opacity: $opacity;
+      font-size: $font-size-p;
+      font-weight: $font-weight-p;
+      line-height: $line-height-p;
+      text-transform: none;
+    }
+}

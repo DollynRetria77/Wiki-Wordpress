@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26.505" height="26.471" viewBox="0 0 26.505 26.471">
+  <defs>
+    <clipPath id="clip-path">
+      <ellipse id="Ellipse_26" data-name="Ellipse 26" cx="12.752" cy="12.736" rx="12.752" ry="12.736" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_6080" data-name="Group 6080" transform="translate(0.5 0.467)">
+    <g id="Group_5948" data-name="Group 5948" transform="translate(0 0)">
+      <g id="Group_5947" data-name="Group 5947" clip-path="url(#clip-path)">
+        <g id="Group_5946" data-name="Group 5946" transform="translate(-5.983 0.022)">
+          <rect id="Rectangle_684" data-name="Rectangle 684" width="40.736" height="25.427" fill="#0065a4"/>
+          <path id="Path_6470" data-name="Path 6470" d="M2621.07,585.06h-22.914V574.889h-5.092V585.06h-12.73v5.085h12.73v10.171h5.092V590.145h22.914Z" transform="translate(-2580.334 -574.889)" fill="#ffde00"/>
+        </g>
+      </g>
+    </g>
+    <ellipse id="Ellipse_27" data-name="Ellipse 27" cx="12.752" cy="12.736" rx="12.752" ry="12.736" transform="translate(0 0.033)" fill="none" stroke="#bcbec0" stroke-width="1"/>
+  </g>
+</svg>

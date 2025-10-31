@@ -1,0 +1,42 @@
+/* Titles */
+
+.title-h2 {
+    @include media-breakpoint-up(lg) {
+        font-size: 23px;
+        line-height: 30px;
+        margin-bottom: 45px;
+    }
+
+    @include media-breakpoint-up(big){
+        font-size: 34px;
+        line-height: 44px;
+        margin-bottom: 50px;
+    }
+
+    @include font-style($Raleway,20px,26px,$bold);
+    color: $blue-title;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.title_similaires{
+    @include font-style($Raleway,20px,26px,$bold);
+    color: $blue-title;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 23px;
+        line-height: 30px;
+        margin-bottom: 50px;
+    }
+
+    @include media-breakpoint-up(big) {
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+

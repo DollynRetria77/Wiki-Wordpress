@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26.505" height="26.505" viewBox="0 0 26.505 26.505">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_22" data-name="Ellipse 22" cx="12.752" cy="12.752" r="12.752" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_6078" data-name="Group 6078" transform="translate(0.5 0.5)">
+    <g id="Group_5940" data-name="Group 5940" transform="translate(0)">
+      <g id="Group_5939" data-name="Group 5939" clip-path="url(#clip-path)">
+        <g id="Group_5938" data-name="Group 5938" transform="translate(-4.392)">
+          <path id="Path_6462" data-name="Path 6462" d="M2168.228,583.4h17.812v-8.515h-30.583Z" transform="translate(-2147.802 -574.889)" fill="#de3831"/>
+          <path id="Path_6463" data-name="Path 6463" d="M2155.457,650.023h30.583V641.51h-17.812Z" transform="translate(-2147.802 -624.518)" fill="#002395"/>
+          <path id="Path_6464" data-name="Path 6464" d="M2177.091,583.4H2159.28l-12.772-8.515h-3.064l15.275,10.194h18.373Z" transform="translate(-2138.853 -574.889)" fill="#fff"/>
+          <path id="Path_6465" data-name="Path 6465" d="M2177.205,634.919V636.6h-17.812l-12.771,8.513H2143.6l15.236-10.194Z" transform="translate(-2138.967 -619.609)" fill="#fff"/>
+          <path id="Path_6466" data-name="Path 6466" d="M2163.68,585.084V590.2h-18.372l-15.236,10.194h-4.63v-3.062l14.526-9.691-14.526-9.654v-3.1h4.591l15.275,10.194Z" transform="translate(-2125.442 -574.889)" fill="#007a4d"/>
+          <path id="Path_6467" data-name="Path 6467" d="M2125.442,594.8l11.433,7.673-11.433,7.636Z" transform="translate(-2125.442 -589.725)"/>
+          <path id="Path_6468" data-name="Path 6468" d="M2125.442,606.384l14.526-9.691-14.526-9.653v1.98l11.433,7.673-11.433,7.637Z" transform="translate(-2125.442 -583.941)" fill="#ffb612"/>
+        </g>
+      </g>
+    </g>
+    <circle id="Ellipse_23" data-name="Ellipse 23" cx="12.752" cy="12.752" r="12.752" transform="translate(0)" fill="none" stroke="#bcbec0" stroke-width="1"/>
+  </g>
+</svg>

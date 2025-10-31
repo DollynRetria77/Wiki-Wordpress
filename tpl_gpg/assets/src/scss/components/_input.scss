@@ -1,0 +1,233 @@
+.form-control {
+    .header-search & {
+        @include font-style($Open-sans,14px,14px,$regular);
+        border: 1px solid $blue-border;
+        color: $grey-link;
+        border-radius: 25px;
+        @include placeholder($Open-sans,$grey-link,13px,13px,$regular,1);
+        padding: 0 20px 0 45px;
+        width: 100%;
+        height: 40px;
+
+        @include media-breakpoint-up(xl) {
+            border: 1px solid $grey;
+            width: 100%;
+            max-width: 960px;
+            height: 0;
+            text-align: center;
+            padding: 0 20px;
+            @include placeholder($Open-sans,$grey-link,14px,14px,$regular,1);
+            transition: all 0.3s linear;
+            opacity: 0;
+            visibility: hidden;
+            box-sizing: border-box;
+
+            .open-search & {
+                opacity: 1;
+                visibility: visible;
+                height: 50px;
+            }
+        }
+    }
+
+    .newsletter-footer & {
+        @include font-style($Open-sans,14px,14px,$regular);
+        @include placeholder($Open-sans,$white,14px,14px,$regular,1);
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 5px;
+        background: transparent;
+        padding: 0 10px 0 40px;
+        margin-bottom: 20px;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .form-search-conseils & {
+        padding: 0 16px;
+        width: 100%;
+        height: 40px;
+        border-color: $blue-border;
+        border-radius: 25px;
+
+        @include media-breakpoint-up(lg) {
+            width: 590px;
+            height: 50px;
+            padding: 0 30px;
+        }
+
+        &:focus {
+            border: 1px solid $blue-border;
+        }
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    background: none !important;
+}
+
+input {
+    &[type="search"]::-webkit-search-decoration,
+    &[type="search"]::-webkit-search-cancel-button,
+    &[type="search"]::-webkit-search-results-button,
+    &[type="search"]::-webkit-search-results-decoration {
+        display: none; 
+    }
+}
+
+
+:not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+    width: 100%;
+    background: none;
+}
+
+//Filter Catalogue
+.btn-light:not(:disabled):not(.disabled).active:focus, .btn-light:not(:disabled):not(.disabled):active:focus, .show>.btn-light.dropdown-toggle:focus {
+    box-shadow: none;
+    background: none;
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    .filtre_catalogue & {
+        width: 100%;
+        @include media-breakpoint-up(xl) {
+            width: 165px;
+        }
+
+        @include media-breakpoint-up(big) {
+            width: 185px;
+        }
+    }
+}
+
+.show > .btn-light.dropdown-toggle {
+    .filtre_catalogue & {
+        background: none;
+        box-shadow: none;
+        border: none;
+        border-bottom: 2px solid $grey-text;
+        border-radius: 0;
+    }
+}
+
+.dropdown-toggle {
+    .filtre_catalogue & {
+        background: none;
+        border-radius: 0;
+        border: none;
+        border-bottom: 2px solid $grey-text;
+        padding: 5px 0;
+
+        &:focus {
+            box-shadow: none;
+            outline: none;
+            outline-offset: none;
+            border-bottom: 2px solid $grey-text;
+        }
+
+        .filter-option-inner-inner {
+            @include font-style($Open-sans,14px,18px,$regular);
+            color: $grey-text;
+        }
+    }
+
+    .bootstrap-select & {
+        .filtre_catalogue & {
+            &:focus {
+                box-shadow: none;
+                outline: none;
+                outline-offset: 0;
+                border-bottom: 2px solid $grey-text;
+            }
+
+            &:after {
+                width: 14px;
+                height: 8px;
+                border: none;
+                margin-top: 0;
+                background: url('../../src/images/sprites/svg/arrow-down.svg');
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    .filtre_catalogue & {
+
+        li {
+            &.active {
+                background: none;
+                color: $orange;
+            }
+        }
+
+        .text {
+            @include font-style($Open-sans,14px,14px,$semi-bold);
+            color: $grey-text;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            line-height: 14px;
+
+            &:hover {
+                background: none;
+
+                .text {
+                    color: $orange;
+                }
+            }
+
+            &.active {
+                background: none;
+                color: $orange;
+
+                &.selected {
+                    .text {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+    }
+
+    &.show {
+        .filtre_catalogue & {
+            padding: 10px 0 15px;
+            background: none;
+            border: none;
+            margin: 0;
+            @include media-breakpoint-down(lg) {
+                transform: none !important;
+                position: static !important;
+                max-height: 120px !important;
+            }
+            
+            @include media-breakpoint-up(xl) {
+                margin: 20px 0 0;
+                border: 1px solid $blue-border;
+                background: $white;
+                padding: 15px 0;
+                min-width: calc(100% + 40px);
+                left: -20px !important;
+            }
+        } 
+    }
+
+    &.show.inner {
+        .filtre_catalogue & {
+            @include media-breakpoint-up(xl) {
+                min-width: 100%;
+                border: none;
+                margin: 0;
+                padding: 0 0 15px;
+            }
+        }
+    }
+}

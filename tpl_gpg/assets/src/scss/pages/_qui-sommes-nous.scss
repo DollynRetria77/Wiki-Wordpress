@@ -1,0 +1,425 @@
+.qsn-item {
+    @include media-breakpoint-up(md){
+        padding-top:45px;
+        padding-bottom:35px;
+    }
+    
+    @include media-breakpoint-up(lg){
+        padding-top:60px;
+        padding-bottom:50px;
+    }
+
+    display: block; 
+    position: relative; 
+    padding-top: 35px;
+    padding-bottom: 45px;
+
+    &--title {
+        @include media-breakpoint-up(md){
+            font-size:26px;
+            line-height:36px;
+            margin-bottom:30px;
+        }
+
+        @include media-breakpoint-up(big){
+            font-size:34px;
+            line-height:44px;
+            margin-bottom:40px;
+        }
+        @include font-style($Raleway, 22px,26px,$bold);
+        color:$blue-title;
+        text-transform: uppercase;
+        text-align:center;
+        margin-bottom:25px;
+
+        .citation-wrapper & {
+            @include media-breakpoint-up(md){
+                margin-bottom:25px;
+            }
+            @include media-breakpoint-up(big){
+                margin-bottom:30px;
+            }
+            margin-bottom:20px;
+        }
+    }
+
+    &--description{
+        @include media-breakpoint-up(big){
+            font-size:18px;
+            line-height:24px;
+        }
+        @include font-style($Raleway, 16px,22px,$regular);
+        color:$grey-text;
+
+        h2{
+            @include media-breakpoint-up(md){
+                font-size:22px;
+                line-height:32px; 
+                margin-bottom:20px;
+            }
+            @include media-breakpoint-up(big){
+                font-size:24px;
+                line-height:34px;
+                margin-bottom:25px;
+            }
+            @include font-style($Raleway, 20px, 28px,$semi-bold);
+            margin-bottom:15px;
+        }
+
+        h3 {
+            @include media-breakpoint-up(md){
+                font-size:20px;
+                line-height:30px; 
+                margin-bottom:20px;
+            }
+            @include media-breakpoint-up(big){
+                font-size:22px;
+                line-height:32px;
+                margin-bottom:25px;
+            }
+            @include font-style($Raleway, 18px, 26px,$semi-bold);
+            margin-bottom:15px;
+        }
+
+        h4 {
+            @include media-breakpoint-up(big){
+                font-size:20px;
+                line-height:30px;
+            }
+            @include font-style($Raleway, 18px, 28px,$semi-bold);
+            margin-bottom:2px;
+        }
+
+        h5, h6 {
+            @include media-breakpoint-up(big){
+                font-size:18px;
+                line-height:24px;
+            }
+            @include font-style($Raleway, 16px,22px,$semi-bold);
+            color:$grey-text;
+        }
+
+        p {
+            @include media-breakpoint-up(big){
+                margin-bottom:20px;
+            }
+
+            margin-bottom:18px;
+
+            a {
+                color: $orange;
+                transition: all 0.5s linear;
+
+                &:hover{
+                    color: $orange-hover;
+                }
+            }
+
+            &:last-child {
+                @include media-breakpoint-up(lg) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &.citation{
+        @include media-breakpoint-up(md){
+            padding-top:40px;
+            padding-bottom:40px;
+        }
+        @include media-breakpoint-up(big){
+            padding-top:50px;
+            padding-bottom:50px;
+        }
+        padding:35px 0;
+    }
+
+    &.notre-partenaires{
+        @include media-breakpoint-up(md){
+            padding-top:65px;
+            padding-bottom:55px;
+        }
+        @include media-breakpoint-up(big){
+            padding-top:90px;
+            padding-bottom:75px;
+        }
+        padding: 30px 0;
+
+        &:before{
+            background-image: url('../images/bg-partenaires.jpg');
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: contain;
+        }
+    }
+
+    &.citation, &.notre-partenaires{
+        display:block; 
+        position:relative;
+        background-color:$grey-slider;
+
+
+        &:before{
+            @include media-breakpoint-up(lg){
+                width:calc(100% + 180px);
+            }
+
+            @include media-breakpoint-up(xxl){
+                width: 100%;
+            }
+
+            content:"";
+            width:calc(100% + 40px);
+            height: 100%;
+            display:block; 
+            position: absolute;
+            background-color:$grey-slider;
+            top:0;
+            left:50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+        }
+    }
+
+    &__slider {
+        margin-top: 20px;
+    
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+        }
+    }
+
+    &.notre-savoir-faire, &.notre-equipe, &.nos-engagements {
+        @include media-breakpoint-up(xxl) {
+            padding: 60px 90px 50px;
+        }
+    }
+}
+
+.qsn-slider-wrapper {
+    .slick-arrow {
+        display: none !important;
+    }
+
+    .qsn-slider-item {
+        overflow: hidden;
+
+        // img {
+        //     transition: all 0.25s linear;
+        // }
+
+        // &:hover {
+        //     img {
+        //         transform: scale(1.05);
+        //     }
+        // }
+    }
+}
+
+.notre-equipe-wrap {
+    align-items: center;
+}
+
+.wrap-image {
+    margin-top: 40px;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        margin: 0;
+    }
+    // img {
+    //     transition: all 0.25s linear;
+    // }
+
+    // &:hover {
+    //     img {
+    //         transform: scale(1.05);
+    //     }
+    // }
+}
+
+.citation-wrapper{
+    @include media-breakpoint-up(xl){
+        padding-left:160px;
+        padding-right:160px;
+    }
+    display:block; 
+    position:relative;
+
+    &--video{
+        aspect-ratio: 16/9;
+        width: 100%;
+        max-width: 846px;
+        height: auto;
+        max-height: 474px;
+        margin: auto;
+        margin-bottom:35px;
+        position:relative;
+    }
+
+    &--lien{
+        @include media-breakpoint-up(md){
+            width:94px;
+            height:32px;
+            top: 34px;
+            left: 39px;
+        }
+        display: block; 
+        position:absolute; 
+        z-index:1;
+        background:white;
+        width: 60px;
+        height: 26px;
+        top: 14px;
+        left: 15px;
+    }
+
+    &--texte{
+        @include media-breakpoint-up(md){
+            font-size:20px;
+            line-height:normal;
+            margin-bottom:25px;
+        }
+        @include media-breakpoint-up(big){
+            //font-size:28px;
+            font-size:26px;
+        }
+        @include font-style($Raleway, 14px, 20px, $semi-bold);
+        color:$blue-title;
+        margin-bottom:20px;
+        text-align:center;
+
+        .second-quote{
+            position: relative;
+            right: 5px;
+            bottom: -18px;
+            margin-left: 3px;
+            font-weight: $bold;
+            font-size: 26px;
+            line-height: 13px;
+            height: 13px;
+            display: inline-block;
+            @include media-breakpoint-up(medium-screen) {
+                font-size: 36px;
+                bottom: -26px;
+            }
+        }
+
+        .first-quote {
+            font-weight: $bold;
+            font-size: 26px;
+            display: inline-block;
+            height: 13px;
+            line-height: 13px;
+            position: relative;
+            top: 2px;
+            @include media-breakpoint-up(medium-screen) {
+                font-size: 36px;
+                top: -2px;
+            }
+        }
+    }
+
+    &--author{
+        @include media-breakpoint-up(md){
+            font-size:16px;
+            line-height:26px;
+        }
+
+        @include media-breakpoint-up(big){
+            font-size:18px;
+            line-height:28px;
+        }
+
+        @include font-style($Raleway, 14px, 30px, $regular);
+        color:$blue-title;
+        text-align:center;
+    }
+}
+
+.col-notre-partenaires{
+    position:relative;
+
+    @include media-breakpoint-up(xxl) {
+        padding: 0 50px;
+    }
+
+    .partenaire-images{
+        @include media-breakpoint-up(lg){
+            position:absolute;
+            left:0;
+            top:50%;
+            transform: translateY(-50%);
+            margin-bottom:0;
+        }
+        display: block; 
+        position:relative;
+        margin-bottom:35px;
+
+        img{
+            width:auto;
+
+            @include breakpoints(992px, 1199px) {
+                max-width:150px;
+            }
+        }
+    }
+
+    .partenaire-card{
+        @include media-breakpoint-up(lg){
+            padding-left:150px;
+            padding-right:150px;
+        }
+        @include media-breakpoint-up(xl){
+            padding-left:300px;
+            padding-right:300px;
+        }
+        display:block;
+        position:relative;
+    }
+}
+
+.partenaire-card{
+    text-align:center;
+
+    .qsn-item--description {
+        @include media-breakpoint-up(big){
+            font-size:22px;
+            line-height:32px;
+        }
+        @include font-style($Raleway, 18px, 30px, $bold);
+        text-align: center;
+    }
+
+    .partenaire-btn {
+        @include media-breakpoint-up(md) {
+            font-size:16px;
+            line-height:20px;
+            padding-top:18px;
+            padding-bottom:18px;
+            margin-top: 35px;
+        }
+
+        @include media-breakpoint-up(big) {
+            font-size:20px;
+            line-height:24px;
+        }
+
+        display:inline-block; 
+        @include font-style($Raleway, 12px, 14px, $bold);
+        text-align:uppercase;
+        background-color:$orange;
+        padding:16px 25px;
+        @include border-radius(32px);
+        color:$grey-text;
+        // transition: all 0.25s linear;
+        text-transform:uppercase;
+        margin-top: 20px;
+
+        &:hover {
+            background-color:#EA8300;
+            color:$grey-text;
+        }
+    }
+}

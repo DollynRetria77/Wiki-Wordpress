@@ -1,0 +1,304 @@
+.contact-page, .error-container, .page-search, .page-article, 
+.type-project, .page-no-results, .page-faq, .simple-pages, .page-configurateur {
+    max-width: 1920px;
+    margin: 0 auto;
+    background:$white;
+}
+
+.page-container{
+    @include media-breakpoint-up(lg){
+        padding-left: 120px;
+        padding-right:120px;
+        padding-top:50px;
+        padding-bottom:80px;
+    }
+
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top:25px;
+    padding-bottom:40px;
+
+    &.article_container{
+        @include media-breakpoint-up(xl){
+            padding-left:180px;
+            padding-right:180px;
+        }
+        @include responsive-up(1440px){
+            padding-left:250px;
+            padding-right:250px;
+        }
+        
+        padding-top:0;
+        padding-bottom:0;
+    }
+
+    &.page-qui-sommes-nous {
+        background: $white;
+
+        @include media-breakpoint-up(lg){
+            padding-left:90px;
+            padding-right:90px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            padding: 0;
+        }
+
+        padding-top:0;
+        padding-bottom:0;
+    }
+}
+
+.page-contact{
+    > .row{
+        align-items:center;
+    }
+}
+
+.pcontact-txt{
+    h2{
+        @extend .title-h2;
+        @include media-breakpoint-up(lg){
+            margin-bottom:30px; 
+        }
+        text-align:left;
+        max-width: 590px;
+        margin-bottom:12px;
+        text-transform:inherit;
+    }
+
+    p{
+
+        @include media-breakpoint-up(big){
+            font-size:18px;
+            line-height:24px;
+        }
+        @include font-style($Raleway,16px,22px,$regular);
+        color:$grey-text;
+    }
+
+    .coordonnees-title{
+        @include media-breakpoint-up(lg){
+            font-size:26px;
+        }
+        @include media-breakpoint-up(big){
+            font-size:30px;
+        }
+        @include font-style($Raleway,16px,32px,$bold);
+        color: $blue-title;
+        margin-top: 30px;
+    }
+}
+
+.pcontact-txt{
+    .contact-form-wrapper{
+        @include media-breakpoint-up(xl){
+            display:none;
+        }
+        display:block;
+        margin-top:30px;
+        position:relative;
+
+        &:before, &:after{
+            content:"";
+            display: block; 
+            position: absolute; 
+            width:20px;
+            height:100%;
+            background:$grey-slider;
+            top: 0;
+        }
+
+        &:before{
+            left:-20px;
+        }
+
+        &:after{
+            right:-20px;
+        }
+    }
+}
+
+.coordonnees-wrapper{    
+    padding-top: 15px;
+    padding-bottom: 25px;
+
+    .coordonnees-item{
+        @include media-breakpoint-up(lg){
+            margin:8px 0;
+        }
+        @include media-breakpoint-up(big){
+            font-size:18px;
+        }
+        margin:2px 0;
+        @include font-style($Raleway, 16px,32px,$regular);
+
+        &.adresses{
+            font-weight: $semi-bold;
+            display: flex;
+            align-items: baseline;
+
+            .icon{
+                font-size:14px;
+                margin-right:10px;
+
+            }
+
+            .adresses-txt{
+                display:inline-block;
+            }
+        }
+        .icon{
+            color:$grey-text;
+        }
+    }
+}
+
+.social-wrapper{
+    @include flexbox();
+
+    @include media-breakpoint-down(md){
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .social-title{
+        @include media-breakpoint-up(lg){
+            margin-right:20px;
+            margin-bottom:0;
+            line-height: inherit;
+        }
+
+        @include media-breakpoint-up(big){
+            font-size:18px;
+        }
+        @include font-style($Raleway, 16px,38px,$bold);
+        color:$blue-title;
+        margin-bottom:10px;
+    }
+
+    .rs-wrapper{
+        li{
+            background:$blue-title;
+            border-radius: 50%;
+        }
+
+        a {
+            color:$white;
+        }
+    }
+}
+
+.pcontact-form{
+    @include media-breakpoint-up(xl){
+        display:block;
+    }
+    display:none;
+}
+.contact-form-wrapper{
+    @include media-breakpoint-up(lg){
+        @include border-radius(10px);
+    }
+    @include media-breakpoint-up(md){
+        padding:35px 45px;
+    }
+    background:$grey-slider;
+    padding:25px 0;
+
+    .form-group{
+        label{
+            @include media-breakpoint-up(big){
+                font-size:18px
+            }
+            @include font-style($Raleway, 16px,32px,$bold);
+            color: $grey-text;
+            margin-bottom:5px;
+        }
+    }
+    .form-check{
+        padding-left:0;
+        margin-top:30px;
+        display: none;
+
+        input[type="checkbox"] {
+            -webkit-appearance: auto!important;
+            -moz-appearance: auto!important;
+            appearance: auto!important;
+
+            /* Double-sized Checkboxes */
+            -ms-transform: scale(1.5); /* IE */
+            -moz-transform: scale(1.5); /* FF */
+            -webkit-transform: scale(1.5); /* Safari and Chrome */
+            -o-transform: scale(1.5); /* Opera */
+            transform: scale(1.5);
+            padding: 10px;
+            margin-left:-13px;
+            background-color:$white;
+        }
+
+        input[type="checkbox"]:checked{
+            background-color:rgb(76,76,76);
+        }
+
+        label{
+            @include flexbox();
+        }
+
+        .wpcf7-list-item-label{
+            @include media-breakpoint-up(big){
+                font-size:16px;
+            }
+            padding-left:15px;
+            @include font-style($Raleway, 14px,22px,$regular);
+        }
+    }
+
+    .btn-primary {
+        @extend .btn-espace-famille;
+        color: $grey-text;
+        background: $orange;
+        border:none;
+        margin-top:20px;
+        transition: none;
+        width: auto;
+
+        @include media-breakpoint-down(md){
+            font-size:12px;
+            line-height: 14px;
+            padding: 16px 26px;
+            width: auto;
+        }
+
+        &:focus{
+            box-shadow:none;
+            outline:none;
+        }
+
+        &:hover {
+            background: $orange-hover;
+            color: $grey-text;
+        }
+    }
+
+    .wpcf7{
+      form{
+        &.invalid{
+            .wpcf7-response-output{
+                color:#dc3232;
+            }
+        }
+        .wpcf7-response-output{
+            border:none;
+            padding:0;
+            color:#46b450;
+        }
+      }  
+    } 
+}
+
+.qui-sommes-nous {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
