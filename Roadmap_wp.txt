@@ -1,0 +1,33 @@
+ROADMAP Wordpress :
+- Custom post type (ok)
+- taxonomie (ok)
+- custom field (ok)
+- short code
+- widget (ok)
+- custom plugins
+- action et filter
+- wp query
+- wordpress et ajax
+- wp rest api
+- url rewriting
+- wordpress en profondeur
+
+
+Creation de theme
+header, footer,
+Chargement des scripts et styles
+la boucle wordpress et les template tags
+template hierarchie
+Custom post type
+Taxonomie
+custom field
+===============================================
+Les métadonnées
+
+- Les taxonomies
+- Les options du thème
+- L'objet wpdb : c'est un objet qui permet d'intéragir directement avec la base de données wp pour faire des requêtes sql et récuperer des résultats particulier. 
+
+- La boucle WordPress et les templates tags
+- Les templates parts
+- Les conditional tags
